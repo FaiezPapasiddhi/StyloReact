@@ -1,0 +1,31 @@
+  [
+    {
+      "id": 1,
+      "image": "assets/Images/6.jpeg",
+      "name": "Dreass for Women",
+      "discountprice": 4000,
+      "price":400
+    },
+    {
+        "id": 2,
+        "image": "assets/images/3.jpeg",
+        "name": "Dreass for Women",
+        "discountprice": 6000,
+        "price":600
+      },
+      {
+        "id": 3,
+        "image": "assets/images/4.jpeg",
+        "name": "Dreass for Men",
+        "discountprice": 8000,
+        "price":500
+      },
+      {
+        "id": 4,
+        "image": "assets/images/5.jpeg",
+        "name": "Dreass for Men",
+        "discountprice": 7500,
+        "price":3500
+      }
+  ]
+  

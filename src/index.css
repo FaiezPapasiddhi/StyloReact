@@ -1,13 +1,683 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+html {
+  overflow: hidden;
+  height: 100%;
+
+}
+
+body {
+  overflow: auto;
+  height: 100%;
+}
+.nav{
+    background: url('assets/Images//slide-big-4.jpeg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-heading h2{
+    line-height: 100px;
+    letter-spacing: 0.7rem;
+    font-size: 80px;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width:641px) and (max-width:900px){
+  .slider-heading h2{
+    line-height: 60px !important;
+    text-align: left;
+    font-size: 40px;
+    letter-spacing: 0.5rem;
+     }
+} 
+
+@media (max-width: 640px) {  
+    .slider-heading h2{
+        line-height: 50px !important;
+        text-align: center;
+        font-size: 35px;
+        letter-spacing: 0.2rem;
+    }
+    .button-shop{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .leftimg{
+      margin-left: 0rem;
+    }
+}
+
+
+
+.opacFull {
+    opacity: 1 !important; }
+  
+  .slider-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+  
+  .site-slider {
+    position: relative; }
+    .site-slider li {
+      line-height: 0;
+      list-style: none; }
+  
+  .slider-img {
+    width: 100%;
+    height: 100%; }
+  
+  .slider-text {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    line-height: normal;
+    color: #fff;
+    transform: translateY(-50%); }
+    .slider-text h3 {
+      font-size: 40px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      opacity: 0; }
+    .slider-text p {
+      font-size: 18px;
+      opacity: 0; }
+  
+  /* .owl-dots {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%); }
+    .owl-dots .owl-dot {
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      display: block;
+      margin: 10px 0;
+      border-radius: 50%; }
+      .owl-dots .owl-dot.active {
+        background: #e05038;
+        transform: scale(1.5); }
+   */
+  .animate-in-fast {
+    animation: in-fast 1000ms ease-in-out forwards; }
+  
+  @keyframes in-fast {
+    0% {
+      opacity: 0;
+      transform: translateX(-3em); }
+    100% {
+      opacity: 1;
+      transform: translateX(0); } }
+  
+  .animate-in-slow {
+    animation: in-slow 1000ms linear forwards; }
+  
+  @keyframes in-slow {
+    0% {
+      opacity: 0;
+      transform: translateX(3em); }
+    100% {
+      opacity: 1;
+      transform: translateX(0); } }
+
+
+
+    /* Button CSS */
+    .main-btn{
+        border:none;
+        position:relative;
+        height:60px;
+        font-size:1.6em;
+        padding:0 2em;
+        cursor:pointer;
+        transition:800ms ease all;
+        outline:none;
+      }
+      .main-btn:hover{
+        background:#fff;
+        color:#000;
+      }
+      .main-btn:before,.main-btn:after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: #000;
+        transition:400ms ease all;
+      }
+      .main-btn:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+      }
+      .main-btn:hover:before,.main-btn:hover:after{
+        width:100%;
+        transition:400ms ease all;
+      }
+
+      .main-btn:hover{
+        position:relative;
+         }
+      
+    /* button CSS end  */
+
+
+  /* Navbar Menu Hover Animation Start Here */
+
+  .d-navbar   ul { 
+    margin: 150px auto 0; 
+    padding: 0; 
+    list-style: none; 
+    display: table;
+    width: 600px;
+    text-align: center;
+  }
+  .d-navbar li { 
+    display: table-cell; 
+    position: relative; 
+    padding: 15px 0;
+  }
+  .d-navbar a {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+  }
+  .d-navbar a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+
+  .d-navbar a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+  @media screen and (max-height: 300px) {
+    .d-navbar ul {
+      margin-top: 40px;
+    }
+  }
+  /* Navbar Menu Hover Animation End Here */
+
+ /* Navbar Menu Hover Animation Start Here */
+
+ .d-navbar-black   ul { 
+  margin: 150px auto 0; 
+  padding: 0; 
+  list-style: none; 
+  display: table;
+  width: 600px;
+  text-align: center;
+}
+.d-navbar-black li { 
+  display: table-cell; 
+  position: relative; 
+  padding: 15px 0;
+}
+.d-navbar-black a {
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+.d-navbar-black a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #000000;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+
+.d-navbar-black a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+@media screen and (max-height: 300px) {
+  .d-navbar-black ul {
+    margin-top: 40px;
+  }
+}
+/* Navbar Menu Hover Animation End Here */
+    /* Navbar Menu for Men Hover Animation Start Here */
+
+    .d-navbarmen  ul { 
+      margin: 150px auto 0; 
+      padding: 0; 
+      list-style: none; 
+      display: table;
+      width: 600px;
+      text-align: center;
+    }
+    .d-navbarmen li { 
+      display: table-cell; 
+      position: relative; 
+      padding: 15px 0;
+    }
+    .d-navbarmen  a {
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      
+      display: inline-block;
+      padding: 15px 20px;
+      position: relative;
+    }
+    .d-navbarmen a:after {    
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: #000;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+  
+  
+    .d-navbarmen  a:hover:after { 
+      width: 100%; 
+      left: 0; 
+    }
+    @media screen and (max-height: 300px) {
+      .d-navbarmen  ul {
+        margin-top: 40px;
+      }
+    }
+    /* Navbar Menu for Men Hover Animation End Here */
+  
+
+
+
+  .addTocart:hover{
+    background-color: #fff !important;
+    color: #000 !important;
+    border:solid black;
+    border-width: thin;
+    transition: 0.3s;
+  }
+
+  .prod-price del::before {
+    background-color: #a3a3a3;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 100%;
+    transform: rotate(-12deg);
+    -webkit-transform: rotate(-12deg);
+    -ms-transform: rotate(-12deg);
+}
+
+.slides-container {
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+.slides-container::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */}
+
+
+
+  .scrollbar
+{
+	margin-left: 22px;
+	float: left;
+	height: 300px;
+	width: 65px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+.force-overflow
+{
+	min-height: 450px;
+}
+
+#wrapper
+{
+	text-align: center;
+	margin: auto;
+}
+
+
+/*
+ *  STYLE 3
+ */
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+}
+
+
+
+/* footer Under Line Effect */
+
+
+.underline-animation {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease-in-out;
+}
+
+.underline-animation:hover::after {
+  width: 100%;
+}
+
+/* footer Under Line Effect */
+
+.active-tab{
+  border-bottom: #000;
+}
+
+
+/* Carousel Home CSS */
+.max-w-7xl{
+  max-width: 89rem !important;
+}
+input#checked-checkbox {
+color: #000;
+}
+.menpage{
+
+background-image: url('assets/Images//pattern-bg.jpeg');
+background-repeat: no-repeat;
+
+}
+
+[type="email"]:focus, [type="password"]:focus, [type="text"]:focus, [type="number"]:focus {
+      color: none !important;
+      border-color: unset !important;
+      outline:none !important;
+      outline-color: none !important;
+}
+[type='checkbox']{
+  color: #000 !important;
+}
+
+
+.loginModel, .registermodel{
+
+background-image: url('assets/Images/model-image.png');
+
+background-size: cover;
+border-radius: 0;
+background-color: rgba(0,0,0,0.5);
+
+}
+#email, #password{
+background: none !important;
+
+}
+.focus\:ring-2:focus{
+--tw-ring-shadow:#fff !important;
+}
+path{
+
+border: 1px solid white;
+padding: 10px;
+}
+
+#prev ,#next{
+padding: 15px;
+background-color: #ffffff5d;
+}
+#prev ,#next:focus{
+border: 3px solid #fff;
+}
+input:checked + label {
+border-color: black;
+
+}
+.focus\:ring-blue-500:focus{
+outline: unset !important;
+}
+
+.d-navbar-black   ul { 
+margin: 150px auto 0; 
+padding: 0; 
+list-style: none; 
+display: table;
+width: 600px;
+text-align: center;
+}
+.d-navbar-black li { 
+display: table-cell; 
+position: relative; 
+padding: 15px 0;
+}
+.d-navbar-black a {
+text-transform: uppercase;
+text-decoration: none;
+letter-spacing: 0.15em;
+
+display: inline-block;
+padding: 15px 20px;
+position: relative;
+}
+.d-navbar-black a:after {    
+background: none repeat scroll 0 0 transparent;
+bottom: 0;
+content: "";
+display: block;
+height: 2px;
+left: 50%;
+position: absolute;
+background: #000000;
+transition: width 0.3s ease 0s, left 0.3s ease 0s;
+width: 0;
+}
+
+
+.d-navbar-black a:hover:after { 
+width: 100%; 
+left: 0; 
+}
+@media screen and (max-height: 300px) {
+.d-navbar-black ul {
+  margin-top: 40px;
+}
+}
+
+
+/* Men Page CSS */
+/* figure {
+width: 300px;
+height: 300px
+} */
+.thumbnail {
+position: relative;
+width: 100%;
+height: 100%;
+margin-bottom: 10px;
+overflow: hidden
+}
+
+.thumbnail > img {
+ max-width: 100%;
+ height: 100%;
+ transition: all 0.6s ease
+}
+
+.thumbnail div {
+position: absolute;
+background: rgba(1, 1, 1, 0.299);
+color: #fff;
+width: 100%;
+height: 100%;
+opacity: 0;
+transition: all 0.3s ease;
+line-height: 300px;
+text-align: center;
+font-size: 30px;
+z-index: 2
+
+}
+
+.thumbnail:hover > img {
+transform: scale(1.1)
+}
+
+.thumbnail:hover > div {
+opacity: 1
+}
+
+
+/* 
+.imageMain{
+margin-left: 11rem;
+} */
+
+
+
+/* Client Review CSS */
+
+.carousel-cell {
+width: 150px;
+height: 150px;
+
+margin-right: 24px;
+counter-increment: carousel-cell;
+}
+
+.carousel-cell:before {
+display: block;
+width: 20%;
+}
+
+.flickity-slider {
+position: absolute;
+width: 100%;
+height: 100%;
+left: -260px !important;
+}
+
+.flickity-button {
+position: absolute !important;
+inset: 0 !important;
+top: 50% !important;
+left: 80% !important;
+background: white;
+border: 0px;
+color: #27272a;
+}
+
+.flickity-prev-next-button:hover {
+background-color: #27272a;
+color: white;
+}
+
+.flickity-prev-next-button.previous {
+visibility: hidden;
+}
+
+.flickity-prev-next-button.next {
+margin-left: 50px;
+width: 48px;
+height: 48px;
+visibility: hidden;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+cursor: none;
+cursor: default;
+}
+
+.flickity-prev-next-button .flickity-button-icon {
+margin-left: 2px;
+margin-top: 2px;
+width: 24px;
+height: 24px;
+}
+/* Client Review CSS End */
+
+.leftimg{
+margin-left: 10rem;
+}
+
+input#name, input#email0, input#password0 {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.Breadcrumpstyle{
+
+  background-image: url(assets/Images/breadcrumb-bg.jpeg);
+
+  background-image: cover;
+  background-repeat: no-repeat;
 }
